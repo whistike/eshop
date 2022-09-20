@@ -5,24 +5,48 @@ const goods = [
   { title: 'iPhone 14', price: 50000, img: 'img/iphone13.png' },
 ];
 
-const renderGoodsItem = ({ title = ' ', price = 0, img = '' }) =>
-  `<div class="goods-item">
-  <img src="${img}" alt="product">
+class GoodsItem {
+  constructor({ title = ' ', price = 0, img = '' }) {
+    this.title = title;
+    this.price = price;
+    this.img = img;
+  }
+  render() {
+    return `<div class="goods-item">
+  <img src="${this.img}" alt="product">
   <div class="item_title">
-  <h3>Модель: ${title}</h3>
-  <p>Цена: ${price}</p>
+  <h3>Модель: ${this.title}</h3>
+  <p>Цена: ${this.price}</p>
   <button class="btn">В корзину</button>
   </div>
   </div>`
-
-const renderGoodsList = (list = []) => {
-  let goodsList = list.map(item => renderGoodsItem(item));
-  document.querySelector('.goods-list').innerHTML = goodsList.join(" ");
-  // Что бы убрать запятые, нужно превратить массив в строку и поставить 
-  // разграничитель. 
+  }
 }
 
-renderGoodsList(goods);
+class GoodsList {
+  list = [];
+  fetchGoods() {
+    this.list = goods;
+  }
+  getAllPrice() {
+    return this.list.reduce((acc, curr) => { return acc + curr.price; }, 0);
+  }
+  render() {
+    const resultList = this.list.map(item => {
+      const goodsItem = new GoodsItem(item);
+      return goodsItem.render();
+    });
+    document.querySelector('.goods-list').innerHTML = resultList.join(" ");
+  }
+}
+
+const goodsList = new GoodsList();
+goodsList.fetchGoods();
+goodsList.render();
+console.log(goodsList.getAllPrice());
+
+
+
 
 /* const btn = document.querySelector('.btn');
 document.querySelector('.goods-item').addEventListener('mouseover', (event) => {

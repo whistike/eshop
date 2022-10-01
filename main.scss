@@ -59,6 +59,7 @@ header {
 
 .head_nav-left {
   display: flex;
+  align-items: center;
   height: 100%;
   width: 70%;
 }
@@ -82,8 +83,28 @@ header {
   font-size: 70px;
 }
 
-.src {
-  width: 80%;
+.search {
+  position: relative;
+  height: 50px;
+  width: 60%;
+  margin-left: 10px;
+  background-color: rgb(199, 199, 199);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.search::placeholder {
+  font-weight: 30px;
+}
+
+.search::before {
+  position: absolute;
+  content: "";
+  top: 100px;
+  width: 30px;
+  height: 30px;
+  background-image: url(./img/search.png);
+  background-color: white;
 }
 
 .head_nav-right {
@@ -94,6 +115,7 @@ header {
 
 .icon_item {
   height: 100%;
+  width: 50%;
   justify-content: center;
   display: flex;
   flex-direction: column;

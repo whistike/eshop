@@ -65,6 +65,7 @@ class GoodsList {
 const goodsList = new GoodsList();
 goodsList.fetchGoods().then(() => {
   goodsList.render();
+  console.log(goodsList.getAllPrice());
 });
 // console.log(goodsList.getAllPrice());
 

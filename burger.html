@@ -1,0 +1,12 @@
+<script>
+  const async = (a, cb) => {
+    setTimeout(() => {
+      const b = a + 1;
+      cb(b);
+    }, 2000);
+  }
+
+  async(5, b => {
+    console.log(b);
+  });
+</script>

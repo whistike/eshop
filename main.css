@@ -1,0 +1,171 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+}
+
+.none {
+  display: none;
+}
+
+body {
+  background-color: rgb(199, 199, 199);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+header {
+  height: 150px;
+  background-color: black;
+}
+
+.head {
+  height: 30%;
+  border-bottom: 1px solid gray;
+}
+
+.head_info {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.head_info span {
+  color: white;
+}
+
+.deliveri {
+  display: inline-block;
+  padding: 10px;
+  background-color: rgb(188, 122, 0);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.deliveri:hover {
+  background-color: orange;
+}
+
+/* Head Nav */
+.head_nav {
+  display: flex;
+  height: 70%;
+  justify-content: space-around;
+}
+
+.head_nav-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+}
+
+.logo {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  height: 100%;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo span {
+  color: white;
+  font-weight: bold;
+  font-size: 33px;
+}
+
+.fa-logo {
+  color: orange;
+  font-size: 70px;
+}
+
+.search {
+  position: relative;
+  height: 50px;
+  width: 60%;
+  margin-left: 10px;
+  background-color: rgb(199, 199, 199);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.search::-moz-placeholder {
+  font-weight: 30px;
+}
+
+.search:-ms-input-placeholder {
+  font-weight: 30px;
+}
+
+.search::placeholder {
+  font-weight: 30px;
+}
+
+.search::before {
+  position: absolute;
+  content: "";
+  top: 100px;
+  width: 30px;
+  height: 30px;
+  background-image: url(./img/search.png);
+  background-color: white;
+}
+
+.head_nav-right {
+  display: flex;
+  height: 100%;
+  width: 30%;
+}
+
+.icon_item {
+  height: 100%;
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.icon_item span {
+  color: white;
+}
+
+.fa {
+  color: white;
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+
+/* Main */
+.goods-list {
+  margin-top: 50px;
+  display: flex;
+}
+
+.goods-item img {
+  width: 150px;
+  height: 300px;
+  padding: 10px;
+}
+
+.goods-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.goods-item:hover {
+  border-radius: 10px;
+  border: 1px solid orange;
+  box-shadow: 0 0 5px 2px;
+}
+
+.item_title {
+  padding-bottom: 10px;
+}/*# sourceMappingURL=main.css.map */

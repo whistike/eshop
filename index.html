@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head >
+  <meta charset="UTF-8">
+  <title>Интернет-магазин</title>
+  <link href="main.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/509dd10112.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+  <header>
+    <div class="head">
+      <div class="container head_info">
+        <span>г.Нижний Новгород ул.Карла Маркса д.10</span>
+        <span>+7(909)191111</span>
+        <span class="deliveri">Бесплатная доставка</span>
+        <span class="sale">Акции</span>
+      </div>
+    </div>
+    <div class="container head_nav">
+      <div class="head_nav-left">
+        <a href="index.html" class="logo">
+          <i class="fa-logo fa-sharp fa-solid fa-apple-whole"></i>
+          <span>realApple<br>store</span>
+        </a>
+        <search v-model="search"></search>
+      </div>
+      <div class="head_nav-right">
+        <custom_button @click="clock">
+          <i class="fa fa-duotone fa-user-secret"></i>
+          <span>личный кабинет</span>
+        </custom_button>
+        <custom_button @click="setVisibleCart">
+          <i class="fa fa-sharp fa-solid fa-basket-shopping"></i>
+          <span>корзина</span>
+        </custom_button>
+        <box @close="setVisibleCart" v-if="isVisibleCart"></box>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container goods-list">
+      <goods_item v-for="item in filterGoods" :item="item"></goods_item>
+      <div v-if="!filterGoods.length">Нет данных</div>
+    </div>
+  </main>
+  </div>
+
+
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>
+
+
+<!--- За визуал строго не судите, времени очень мало -->
